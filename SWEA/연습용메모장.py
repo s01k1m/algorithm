@@ -1,2 +1,2 @@
-n, m = map(int, input().split())
-print(n, m , type(n))
+for x in range(0, 9, 3):
+    print(x)
