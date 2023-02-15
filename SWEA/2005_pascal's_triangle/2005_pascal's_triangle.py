@@ -1,13 +1,32 @@
 T = int(input())
-
-
+memo = [[0 for _ in range(11)] for _ in range(11)]
+for i in range(10):
+    for j in range(i+1):
+        if j == 0 or i == j:
+            memo[i][j] = 1
+        else:
+            memo[i][j] = memo[i-1][j-1] + memo[i-1][j]
 for tc in range(1, T+1):
-    n = int(input())
-    # 파스칼의 삼각형 구하기
-    tri = [[0] * r for r in range(1, n+1)]
+    N = int(input())
+    print(f'#{tc}')
+    for i in range(N):
+        for j in range(i+1):
+            print(f'{memo[i][j]}', end = " ")
+        print()
 
-    # 한줄 씩 구하면서 출력
-    # 이전 행에서 사용했던 결과를 이용해서 현재 행을 구하기
-    for r in range(n):
-        for c in range(r+1):
-            if c ==
+# t = int(input())
+# for case in range(1, t + 1):
+#     n = int(input())
+#
+#     memo = [[0] * n for _ in range(n)]
+#
+#     for i in range(n):
+#         for j in range(i + 1):
+#             if j == 0 or i == j:
+#                 memo[i][j] = 1
+#             else:
+#                 memo[i][j] = memo[i - 1][j - 1] + memo[i - 1][j]
+#     print(f'#{case}')
+#     for lst in memo:
+#         result = [x for x in lst if x]
+#         print(*result)
