@@ -1,5 +1,0 @@
-2
-banana bana
-asakusa sa	//Test Case의 개수
-//A=”banana”, B=”bana”
-//A=”asakusa”, B=”sa”
