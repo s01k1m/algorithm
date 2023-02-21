@@ -17,3 +17,9 @@ for tc in range(11):
 
     print(f'#{tc}', end = " ")
     print(*queue)
+
+
+
+
+    # int -> str으로 바꾸고
+    # join문을 쓰면 된다.
