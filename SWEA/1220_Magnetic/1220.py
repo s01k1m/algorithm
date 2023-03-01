@@ -10,21 +10,21 @@ def move(queue):
     return queue.count('12')
     # 아래 처럼 하지 말고 걍 12세면 된다.
 
-    # 정체된 자석 수
-    # while queue:  # list가 안 비었을 동안
-    #     if len(queue) == 1:     # 종료 조건
-    #         return cnt
-    #     elif queue.pop(0) == 1:       # 자석이 아래로 내려오는 거면
-    #         if len(queue) == 0:     # 방금 팝한게 마지막 원소이면
-    #             return cnt        # 종료 조건
-    #         elif queue.pop(0) == 2:       # 내려오는1이랑 올라가는 2가 만났으므로 정체된 자석 +=1
-    #             cnt += 1
-    #             move(queue)         # 그다음 자석 검사
-    #         else:
-    #             move(queue)          # 다음거 검사
-    #     elif queue.pop(0) == 2:      # 2위로 올라가는 거면
-    #         move(queue)              # 다음 자석 검사
-    # return cnt
+    정체된 자석 수
+    while queue:  # list가 안 비었을 동안
+        if len(queue) == 1:     # 종료 조건
+            return cnt
+        elif queue.pop(0) == 1:       # 자석이 아래로 내려오는 거면
+            if len(queue) == 0:     # 방금 팝한게 마지막 원소이면
+                return cnt        # 종료 조건
+            elif queue.pop(0) == 2:       # 내려오는1이랑 올라가는 2가 만났으므로 정체된 자석 +=1
+                cnt += 1
+                move(queue)         # 그다음 자석 검사
+            else:
+                move(queue)          # 다음거 검사
+        elif queue.pop(0) == 2:      # 2위로 올라가는 거면
+            move(queue)              # 다음 자석 검사
+    return cnt
 
 T = 10
 for tc in range(1, T+1):
