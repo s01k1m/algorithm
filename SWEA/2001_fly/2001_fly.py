@@ -2,22 +2,24 @@ import sys
 sys.stdin = open("input.txt", "r")
 
 
-T = int(input()) # test case
-
 def fly(m, n, arr):
-    for ii in range(m - n + 1):
-        for i in range(m):
-            sum = 0
-            for j in range(ii, ii+n+1):
-                # sum +=
-                sum_lst.append(arr[i][j])
+    lst = []
+    for i_frontier in range(n - m + 1):
+        for j_frontier in range(n - m + 1):
+            box = []
+            for i_flapper in range(i_frontier, i_frontier+m):
+                for j_flapper in range(j_frontier, j_frontier+m):
+                    box.append(arr[i_flapper][j_flapper])
+            lst.append(sum(box))
+    return lst
 
 
+
+T = int(input()) # test case
 for tc in range(1, T+1):
-    m, n = map(int, input().split())
-    arr = [list(map(int, input().split())) for _ in range(m)]
-    sum_lst = []
+    n, m = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(n)]
 
-    fly(m, n, arr)
-    print(sum_lst)
+
+    print(f'#{tc} {max(fly(m, n, arr))}')
 
