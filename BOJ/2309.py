@@ -22,6 +22,7 @@ while flag:
                         arr.pop(i)
                         flag= False
                         break
+        # 내가 헷갈렸던 break 탈출하는 법
         if not flag:
             break
 
