@@ -19,8 +19,8 @@ N = int(input())
 
 for n in range(1, N):
     # 별의 갯수 2 * n - 1
-    print('*' * (2 * n - 1))
+    print(" " * (N-1-n), '*' * (2 * n - 1))
 for _ in range(1):
-    print('*' * N)
+    print('*' * (2*N-1))
 for n in range(N, 0, -1):
-    print('*' * (2 * n - 1))
+    print(" " * (N-n-2), '*' * (2 * n - 1))
