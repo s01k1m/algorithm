@@ -4,5 +4,5 @@ r`-_   ,'  ,/
    `~\\/
       |
       |"""
-print(weed)
+print(weed==0)
 
