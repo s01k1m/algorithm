@@ -4,15 +4,14 @@
 
 # row, column
 r, c = map(int, input().split())
-# chess board
+# 입력받은 chess board
 board = [ input() for _ in range(r)]
 
-print(board)
 answer = []
+# 정석 체스 보드
 standard = ['WBWBWBWB', 'BWBWBWBW']
-tmp = []
 
-
+# 체스판의 크기는 8 by 8 이므로 입력받은 보드에서 유효한 영역은 0~r-8, 0~c-8임
 for i in range(0, r-7):
     for j in range(0, c-7):
         for k in range(0, 2): # (0,0)w로 시작하는 경우 b로 시작하는 경우 두번 검사
